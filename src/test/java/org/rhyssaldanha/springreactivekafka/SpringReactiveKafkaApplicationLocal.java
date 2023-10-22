@@ -4,10 +4,11 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SpringReactiveKafkaApplication {
-
+public class SpringReactiveKafkaApplicationLocal {
     public static void main(final String[] args) {
-        SpringApplication.run(SpringReactiveKafkaApplication.class, args);
+        SpringApplication
+                .from(SpringReactiveKafkaApplication::main)
+                .with(SpringReactiveKafkaApplicationLocal.class)
+                .run(args);
     }
-
 }
